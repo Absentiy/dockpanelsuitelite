@@ -399,7 +399,6 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
-        [SuppressMessage("Microsoft.Naming", "CA1720:AvoidTypeNamesInParameters")]
         public DockState CheckDockState(bool isFloat)
         {
             DockState dockState;
