@@ -10,30 +10,6 @@ namespace WeifenLuo.WinFormsUI.Docking
         [ToolboxItem(false)]
         public class AutoHideWindowControl : Panel, ISplitterHost
         {
-            protected class SplitterControl : SplitterBase
-            {
-                public SplitterControl(AutoHideWindowControl autoHideWindow)
-                {
-                    m_autoHideWindow = autoHideWindow;
-                }
-
-                private AutoHideWindowControl m_autoHideWindow;
-                private AutoHideWindowControl AutoHideWindow
-                {
-                    get { return m_autoHideWindow; }
-                }
-
-                protected override int SplitterSize
-                {
-                    get { return AutoHideWindow.DockPanel.Theme.Measures.AutoHideSplitterSize; }
-                }
-
-                protected override void StartDrag()
-                {
-                    AutoHideWindow.DockPanel.BeginDrag(AutoHideWindow, AutoHideWindow.RectangleToScreen(Bounds));
-                }
-            }
-
             #region consts
             private const int ANIMATE_TIME = 100;    // in mini-seconds
             #endregion
